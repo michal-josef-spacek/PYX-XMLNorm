@@ -1,0 +1,11 @@
+TODO
+====
+1. Opravit testy.
+2. Dodelat pokryti testy.
+3. Dodelat dokumentaci v PYX::XMLNorm.
+4. Popremyslet, jestli neni lepsi nepouzivat globalni promenne v PYX::XMLNorm.
+   Neco jako XML::Parser.
+5.
+
+Applied
+=======
