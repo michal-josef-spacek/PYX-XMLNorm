@@ -6,12 +6,10 @@ use warnings;
 use File::Object;
 use PYX::XMLNorm;
 use Test::More 'tests' => 8;
+use Test::Output;
 
 # Directories.
 my $data_dir = File::Object->new->up->dir('data');
-
-# Include helpers.
-do File::Object->new->up->file('get_stdout.inc')->s;
 
 # Test.
 my $rules_hr = {
@@ -25,7 +23,6 @@ my $rules_hr = {
 my $obj = PYX::XMLNorm->new(
 	'rules' => $rules_hr,
 );
-my $ret = get_stdout($obj, $data_dir->file('ex1.pyx')->s);
 my $right_ret = <<"END";
 (html
 (head
@@ -44,10 +41,14 @@ my $right_ret = <<"END";
 )body
 )html
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex1.pyx')->s);
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex2.pyx')->s);
 $right_ret = <<"END";
 (table
 (tr
@@ -68,14 +69,22 @@ $right_ret = <<"END";
 )tr
 )table
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex2.pyx')->s);
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex3')->s);
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex3.pyx')->s);
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex4.pyx')->s);
 $right_ret = <<"END";
 (html
 (head
@@ -100,10 +109,14 @@ $right_ret = <<"END";
 )body
 )html
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex4.pyx')->s);
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex5.pyx')->s);
 $right_ret = <<"END";
 (td
 (table
@@ -118,19 +131,27 @@ $right_ret = <<"END";
 )table
 )td
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex5.pyx')->s);
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex6.pyx')->s);
 $right_ret = <<"END";
 (br
 )br
 -text
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex6.pyx')->s);
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex7.pyx')->s);
 $right_ret = <<"END";
 (br
 )br
@@ -138,10 +159,14 @@ $right_ret = <<"END";
 )br
 -text
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex7.pyx')->s);
+	},
+	$right_ret,
+);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('ex8.pyx')->s);
 $right_ret = <<"END";
 (table
 (tr
@@ -151,4 +176,9 @@ $right_ret = <<"END";
 )tr
 )table
 END
-is($ret, $right_ret);
+stdout_is(
+	sub {
+		$obj->parse_file($data_dir->file('ex8.pyx')->s);
+	},
+	$right_ret,
+);
