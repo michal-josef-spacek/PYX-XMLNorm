@@ -44,6 +44,7 @@ END
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex1.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
@@ -72,6 +73,7 @@ END
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex2.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
@@ -80,6 +82,7 @@ stdout_is(
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex3.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
@@ -112,6 +115,7 @@ END
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex4.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
@@ -134,6 +138,7 @@ END
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex5.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
@@ -147,6 +152,7 @@ END
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex6.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
@@ -162,6 +168,7 @@ END
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex7.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
@@ -179,6 +186,7 @@ END
 stdout_is(
 	sub {
 		$obj->parse_file($data_dir->file('ex8.pyx')->s);
+		return;
 	},
 	$right_ret,
 );
