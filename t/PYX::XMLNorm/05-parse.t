@@ -13,9 +13,6 @@ my $data_dir = File::Object->new->up->dir('data');
 # Include helpers.
 do File::Object->new->up->file('get_stdout.inc')->s;
 
-# Debug print.
-print "Testing: parse() method.\n";
-
 # Test.
 my $rules_hr = {
 	'*' => ['br', 'hr', 'link', 'meta', 'input'],

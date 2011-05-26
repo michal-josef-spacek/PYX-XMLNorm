@@ -7,9 +7,6 @@ use English qw(-no_match_vars);
 use PYX::XMLNorm;
 use Test::More 'tests' => 2;
 
-# Debug message.
-print "Testing constructor.\n";
-
 # Test.
 eval {
 	$class->new('');
