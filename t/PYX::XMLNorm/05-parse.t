@@ -24,7 +24,7 @@ my $rules_hr = {
 my $obj = PYX::XMLNorm->new(
 	'rules' => $rules_hr,
 );
-my $ret = get_stdout($obj, $data_dir->file('example9.pyx')->s);
+my $ret = get_stdout($obj, $data_dir->file('ex1.pyx')->s);
 my $right_ret = <<"END";
 (html
 (head
@@ -46,7 +46,7 @@ END
 is($ret, $right_ret);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('example10.pyx')->s);
+$ret = get_stdout($obj, $data_dir->file('ex2.pyx')->s);
 $right_ret = <<"END";
 (table
 (tr
@@ -70,11 +70,11 @@ END
 is($ret, $right_ret);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('example11.pyx')->s);
+$ret = get_stdout($obj, $data_dir->file('ex3')->s);
 is($ret, $right_ret);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('example12.pyx')->s);
+$ret = get_stdout($obj, $data_dir->file('ex4.pyx')->s);
 $right_ret = <<"END";
 (html
 (head
@@ -102,7 +102,7 @@ END
 is($ret, $right_ret);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('example13.pyx')->s);
+$ret = get_stdout($obj, $data_dir->file('ex5.pyx')->s);
 $right_ret = <<"END";
 (td
 (table
@@ -120,7 +120,7 @@ END
 is($ret, $right_ret);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('example14.pyx')->s);
+$ret = get_stdout($obj, $data_dir->file('ex6.pyx')->s);
 $right_ret = <<"END";
 (br
 )br
@@ -129,7 +129,7 @@ END
 is($ret, $right_ret);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('example15.pyx')->s);
+$ret = get_stdout($obj, $data_dir->file('ex7.pyx')->s);
 $right_ret = <<"END";
 (br
 )br
@@ -140,7 +140,7 @@ END
 is($ret, $right_ret);
 
 # Test.
-$ret = get_stdout($obj, $data_dir->file('example16.pyx')->s);
+$ret = get_stdout($obj, $data_dir->file('ex8.pyx')->s);
 $right_ret = <<"END";
 (table
 (tr
