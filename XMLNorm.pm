@@ -230,10 +230,10 @@ PYX::XMLNorm - TODO
 =head1 ERRORS
 
  Mine:
-   TODO
+         TODO
 
  From PYX::Utils::set_params():
-   Unknown parameter '%s'.
+         Unknown parameter '%s'.
 
 =head1 EXAMPLE
 
@@ -246,7 +246,7 @@ PYX::XMLNorm - TODO
 
  # Object.
  my $xml_norm = PYX::XMLNorm->new(
-   TODO
+         TODO
  );
 
 =head1 DEPENDENCIES
