@@ -8,13 +8,13 @@ print "Testing constructor.\n";
 
 # Test.
 eval {
-	$obj = $class->new('');
+	$class->new('');
 };
 ok($EVAL_ERROR, "Unknown parameter ''.");
 
 # Test.
 eval {
-	$obj = $class->new(
+	$class->new(
 		'something' => 'value',
 	);
 };
