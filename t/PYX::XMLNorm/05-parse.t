@@ -24,7 +24,7 @@ my $rules_hr = {
 my $obj = PYX::XMLNorm->new(
 	'rules' => $rules_hr,
 );
-my $right_ret = <<"END";
+my $right_ret = <<'END';
 (html
 (head
 (link
