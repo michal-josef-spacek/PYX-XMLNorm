@@ -232,7 +232,7 @@ PYX::XMLNorm - TODO
  Mine:
          TODO
 
- From PYX::Utils::set_params():
+ From Class::Utils::set_params():
          Unknown parameter '%s'.
 
 =head1 EXAMPLE
