@@ -46,6 +46,7 @@ my $ex1 = slurp($data_dir->file('ex1.pyx')->s);
 stdout_is(
 	sub {
 		$obj->parse($ex1);
+		return;
 	},
 	$right_ret,
 	'Simple test for parse() method.',
