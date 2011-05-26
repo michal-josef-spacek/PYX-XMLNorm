@@ -7,4 +7,4 @@ use PYX::XMLNorm;
 use Test::More 'tests' => 1;
 
 # Test.
-is($PYX::XMLNorm::VERSION, 0.02, 'Version.');
+is($PYX::XMLNorm::VERSION, 0.01, 'Version.');
