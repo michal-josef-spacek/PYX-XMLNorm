@@ -1,0 +1,48 @@
+#!/usr/bin/env perl
+
+# Pragmas.
+use strict;
+use warnings;
+
+# Modules.
+use Getopt::Std;
+use PYX::XMLNorm;
+
+# Arguments.
+my $opt = {
+	'h' => 0,
+	'f' => 0,
+};
+if (! getopts('hf', $opt) || $opt->{'h'} || @ARGV < 1) {
+	print "Usage: $0 [-f] [filename] [-]\n";
+	print "\t-f\t\tflush stack on end of processing\n";
+	print "\tfilename\tprocess on filename\n";
+	print "\t-\t\tprocess on stdin\n";
+	exit 1;
+}
+
+# PYX::XMLNorm object.
+my $normalizer = PYX::XMLNorm->new(
+	'flush_stack' => $opt->{'f'},
+	'rules' => {
+		'*' => ['br', 'hr', 'link', 'meta', 'input', 'img'],
+		'div' => ['p'],
+		'html' => ['body'],
+		'option' => ['option'],
+		'p' => ['p'],
+		'select' => ['option'],
+		'table' => ['tr'],
+		'td' => ['td'],
+		'th' => ['th'],
+		'tr' => ['td', 'th', 'tr'],
+	},
+);
+
+# Parse from stdin.
+if ($ARGV[0] eq '-') {
+	$normalizer->parse_handler(\*STDIN);
+
+# Parse file.
+} else {
+	$normalizer->parse_file($ARGV[0]);
+}
