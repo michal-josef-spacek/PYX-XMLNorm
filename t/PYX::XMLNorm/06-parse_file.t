@@ -23,7 +23,7 @@ my $rules_hr = {
 my $obj = PYX::XMLNorm->new(
 	'rules' => $rules_hr,
 );
-my $right_ret = <<"END";
+my $right_ret = <<'END';
 (html
 (head
 (link
@@ -49,7 +49,7 @@ stdout_is(
 );
 
 # Test.
-$right_ret = <<"END";
+$right_ret = <<'END';
 (table
 (tr
 (td
@@ -85,7 +85,7 @@ stdout_is(
 );
 
 # Test.
-$right_ret = <<"END";
+$right_ret = <<'END';
 (html
 (head
 (LINK
@@ -117,7 +117,7 @@ stdout_is(
 );
 
 # Test.
-$right_ret = <<"END";
+$right_ret = <<'END';
 (td
 (table
 (tr
@@ -139,7 +139,7 @@ stdout_is(
 );
 
 # Test.
-$right_ret = <<"END";
+$right_ret = <<'END';
 (br
 )br
 -text
@@ -152,7 +152,7 @@ stdout_is(
 );
 
 # Test.
-$right_ret = <<"END";
+$right_ret = <<'END';
 (br
 )br
 (br
@@ -167,7 +167,7 @@ stdout_is(
 );
 
 # Test.
-$right_ret = <<"END";
+$right_ret = <<'END';
 (table
 (tr
 (td
