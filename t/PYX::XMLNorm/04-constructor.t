@@ -9,13 +9,13 @@ use Test::More 'tests' => 2;
 
 # Test.
 eval {
-	$class->new('');
+	PYX::XMLNorm->new('');
 };
 ok($EVAL_ERROR, "Unknown parameter ''.");
 
 # Test.
 eval {
-	$class->new(
+	PYX::XMLNorm->new(
 		'something' => 'value',
 	);
 };
