@@ -5,7 +5,23 @@ TODO
 3. Dodelat dokumentaci v PYX::XMLNorm.
 4. Popremyslet, jestli neni lepsi nepouzivat globalni promenne v PYX::XMLNorm.
    Neco jako XML::Parser.
-5.
+5. Resit PYX::XMLNorm s flush.
+    Mam vstup:
+    (xml
+    (gogo
+    )xml
+    Vystup normalne to dava:
+    (xml
+    (gogo
+    )xml
+    Vystup s flush stackem dava:
+    (xml
+    (gogo
+    )xml
+    )gogo
+    )xml
+    Coz je demence :)
+6.
 
 Applied
 =======
