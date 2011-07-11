@@ -23,6 +23,7 @@ WriteMakefile(
 	'EXE_FILES' => [
 		'bin/pyx_xml_normalization',
 	],
+	'LICENSE' => 'bsd',
 	'NAME' => 'PYX::XMLNorm',
 	'PREREQ_PM' => {
 		'Class::Utils' => 0.01,
