@@ -4,8 +4,8 @@ use warnings;
 
 # Modules.
 use File::Object;
+use File::Slurp qw(slurp);
 use PYX::XMLNorm;
-use Perl6::Slurp qw(slurp);
 use Test::More 'tests' => 1;
 use Test::Output;
 
