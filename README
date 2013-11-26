@@ -1,0 +1,68 @@
+NAME
+    PYX::XMLNorm - TODO
+
+SYNOPSIS
+     use PYX::XMLNorm;
+     my $xml_norm = PYX::XMLNorm->new(%parameters);
+     TODO
+
+METHODS
+    new()
+             Constructor.
+
+            *       flush_stack
+
+                     TODO
+
+            *       output_handler
+
+                     TODO
+
+            *       rules
+
+                     TODO
+
+    parse()
+             TODO
+
+    parse_file()
+             TODO
+
+    parse_handler()
+             TODO
+
+ERRORS
+     Mine:
+             TODO
+
+     From Class::Utils::set_params():
+             Unknown parameter '%s'.
+
+EXAMPLE
+     # Pragmas.
+     use strict;
+     use warnings;
+
+     # Modules.
+     use PYX::XMLNorm;
+
+     # Object.
+     my $xml_norm = PYX::XMLNorm->new(
+             TODO
+     );
+
+DEPENDENCIES
+    Class::Utils(3pm), Error::Pure(3pm), PYX(3pm), PYX::Parser(3pm).
+
+SEE ALSO
+     TODO
+
+AUTHOR
+    Michal Špaček skim@cpan.org.
+
+LICENSE AND COPYRIGHT
+    BSD license.
+
+VERSION
+    0.01
+
