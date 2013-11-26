@@ -9,6 +9,7 @@ build_requires:
   File::Slurp: 0
   Test::More: 0
   Test::NoWarnings: 0
+  Test::Output: 1.02
   Test::Pod: 0
   Test::Pod::Coverage: 0
 configure_requires:
