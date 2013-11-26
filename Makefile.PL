@@ -8,7 +8,7 @@ use inc::Module::Install;
 # Definition.
 abstract 'TODO';
 author 'Michal Špaček <skim@cpan.org>';
-install_script 'bin/pyx_xml_normalization';
+install_script 'bin/pyx-xml-normalization';
 license 'bsd';
 name 'PYX-XMLNorm';
 readme_from 'XMLNorm.pm';
