@@ -251,10 +251,10 @@ PYX::XMLNorm - TODO
 
 =head1 DEPENDENCIES
 
-L<Class::Utils(3pm)>,
-L<Error::Pure(3pm)>,
-L<PYX(3pm)>,
-L<PYX::Parser(3pm)>.
+L<Class::Utils>,
+L<Error::Pure>,
+L<PYX>,
+L<PYX::Parser>.
 
 =head1 SEE ALSO
 
