@@ -193,35 +193,35 @@ PYX::XMLNorm - TODO
 
 =over 8
 
-=item B<new()>
+=item C<new()>
 
  Constructor.
 
 =over 8
 
-=item * B<flush_stack>
+=item * C<flush_stack>
 
  TODO
 
-=item * B<output_handler>
+=item * C<output_handler>
 
  TODO
 
-=item * B<rules>
+=item * C<rules>
 
  TODO
 
 =back
 
-=item B<parse()>
+=item C<parse()>
 
  TODO
 
-=item B<parse_file()>
+=item C<parse_file()>
 
  TODO
 
-=item B<parse_handler()>
+=item C<parse_handler()>
 
  TODO
 

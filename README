@@ -7,28 +7,28 @@ SYNOPSIS
      TODO
 
 METHODS
-    new()
+    "new()"
              Constructor.
 
-            *       flush_stack
+            *       "flush_stack"
 
                      TODO
 
-            *       output_handler
+            *       "output_handler"
 
                      TODO
 
-            *       rules
+            *       "rules"
 
                      TODO
 
-    parse()
+    "parse()"
              TODO
 
-    parse_file()
+    "parse_file()"
              TODO
 
-    parse_handler()
+    "parse_handler()"
              TODO
 
 ERRORS
