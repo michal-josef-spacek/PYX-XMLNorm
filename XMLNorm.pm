@@ -260,6 +260,10 @@ L<PYX::Parser>.
 
  TODO
 
+=head1 REPOSITORY
+
+L<https://github.com/tupinek/PYX-XMLNorm>
+
 =head1 AUTHOR
 
 Michal Špaček L<skim@cpan.org>.
