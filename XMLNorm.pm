@@ -7,7 +7,7 @@ use warnings;
 # Modules.
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
-use PYX qw(end_tag);
+use PYX qw(end_element);
 use PYX::Parser;
 
 # Version.
@@ -40,14 +40,14 @@ sub new {
 
 	# PYX::Parser object.
 	$self->{'pyx_parser'} = PYX::Parser->new(
+		'callbacks' => {
+			'data' => \&_end_element_simple,
+			'end_element' => \&_end_element,
+			'final' => \&_final,
+			'start_element' => \&_start_element,
+		},
 		'output_handler' => $self->{'output_handler'},
 		'output_rewrite' => 1,
-
-		# Handlers.
-		'data' => \&_end_tag_simple,
-		'end_tag' => \&_end_tag,
-		'final' => \&_final,
-		'start_tag' => \&_start_tag,
 	);
 
 	# Tag values.
@@ -84,31 +84,31 @@ sub parse_handler {
 	return;
 }
 
-# Process start of tag.
-sub _start_tag {
+# Process start of element.
+sub _start_element {
 	my ($pyx_parser, $tag) = @_;
 	my $out = $pyx_parser->{'output_handler'};
 	if (exists $rules->{'*'}) {
 		foreach my $tmp (@{$rules->{'*'}}) {
 			if (@{$stack} > 0 && lc($stack->[-1]) eq $tmp) {
-				print {$out} end_tag(pop @{$stack}), "\n";
+				print {$out} end_element(pop @{$stack}), "\n";
 			}
 		}
 	}
 	if (exists $rules->{lc($tag)}) {
 		foreach my $tmp (@{$rules->{lc($tag)}}) {
 			if (@{$stack} > 0 && lc($stack->[-1]) eq $tmp) {
-				print {$out} end_tag(pop @{$stack}), "\n";
+				print {$out} end_element(pop @{$stack}), "\n";
 			}
 		}
 	}
 	push @{$stack}, $tag;
-	print {$out} $pyx_parser->{'line'}, "\n";
+	print {$out} $pyx_parser->line, "\n";
 	return;
 }
 
-# Add implicit end_tag.
-sub _end_tag_simple {
+# Add implicit end_element.
+sub _end_element_simple {
 	my $pyx_parser = shift;
 
 	# Output handler.
@@ -118,25 +118,25 @@ sub _end_tag_simple {
 	if (exists $rules->{'*'}) {
 		foreach my $tmp (@{$rules->{'*'}}) {
 			if (lc $stack->[-1] eq $tmp) {
-				print {$out} end_tag(pop @{$stack}), "\n";
+				print {$out} end_element(pop @{$stack}), "\n";
 			}
 		}
 	}
 
 	# Print line.
-	print {$out} $pyx_parser->{'line'}, "\n";
+	print {$out} $pyx_parser->line, "\n";
 
 	return;
 }
 
-# Process tag.
-sub _end_tag {
+# Process end of element
+sub _end_element {
 	my ($pyx_parser, $tag) = @_;
 	my $out = $pyx_parser->{'output_handler'};
 	if (exists $rules->{'*'}) {
 		foreach my $tmp (@{$rules->{'*'}}) {
 			if (lc($tag) ne $tmp && lc($stack->[-1]) eq $tmp) {
-				print {$out} end_tag(pop @{$stack}), "\n";
+				print {$out} end_element(pop @{$stack}), "\n";
 			}
 		}
 	}
@@ -144,14 +144,14 @@ sub _end_tag {
 	if (exists $rules->{$tag}) {
 		foreach my $tmp (@{$rules->{$tag}}) {
 			if (lc($tag) ne $tmp && lc($stack->[-1]) eq $tmp) {
-				print {$out} end_tag(pop @{$stack}), "\n";
+				print {$out} end_element(pop @{$stack}), "\n";
 			}
-		}	
+		}
 	}
 	if (lc($stack->[-1]) eq lc($tag)) {
 		pop @{$stack};
 	}
-	print {$out} $pyx_parser->{'line'}, "\n";
+	print {$out} $pyx_parser->line, "\n";
 	return;
 }
 
@@ -164,7 +164,7 @@ sub _final {
 		# If set, than flush stack.
 		if ($flush_stack) {
 			foreach my $tmp (reverse @{$stack}) {
-				print {$out} end_tag($tmp), "\n";
+				print {$out} end_element($tmp), "\n";
 			}
 		}
 	}
