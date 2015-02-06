@@ -186,8 +186,10 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 =head1 SYNOPSIS
 
  use PYX::XMLNorm;
- my $xml_norm = PYX::XMLNorm->new(%parameters);
- TODO
+ my $obj = PYX::XMLNorm->new(%parameters);
+ $obj->parse($pyx, $out);
+ $obj->parse_file($input_file, $out);
+ $obj->parse_handle($input_file_handler, $out);
 
 =head1 METHODS
 
@@ -201,39 +203,54 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 
 =item * C<flush_stack>
 
- TODO
+ Flush stack on finalization.
+ Default value is 0.
 
 =item * C<output_handler>
 
- TODO
+ Output handler.
+ Default value is \*STDOUT.
 
 =item * C<rules>
 
- TODO
+ XML normalization rules.
+ Parameter is required.
+ Format of rules is:
+ outer element => list of inner elements.
+ e.g.
+ {
+         'middle' => ['end'],
+ },
+ Default value is {}.
 
 =back
 
-=item C<parse()>
+=item C<parse($pyx[, $out])>
 
- TODO
+ Parse PYX text or array of PYX text.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
-=item C<parse_file()>
+=item C<parse_file($input_file[, $out])>
 
- TODO
+ Parse file with PYX data.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
-=item C<parse_handler()>
+=item C<parse_handler($input_file_handler[, $out])>
 
- TODO
+ Parse PYX handler.
+ If $out not present, use 'output_handler'.
+ Returns undef.
 
 =back
 
 =head1 ERRORS
 
- Mine:
-         TODO
-
- From Class::Utils::set_params():
-         Unknown parameter '%s'.
+ new():
+         Cannot exist XML normalization rules.
+         From Class::Utils::set_params():
+                 Unknown parameter '%s'.
 
 =head1 EXAMPLE
 
@@ -244,10 +261,34 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
  # Modules.
  use PYX::XMLNorm;
 
+ # Example data.
+ my $pyx = <<'END';
+ (begin
+ (middle
+ (end
+ -data
+ )middle
+ )begin
+ END
+
  # Object.
- my $xml_norm = PYX::XMLNorm->new(
-         TODO
+ my $obj = PYX::XMLNorm->new(
+         'rules' => {
+                 'middle' => ['end'],
+         },
  );
+
+ # Nomrmalize..
+ $obj->parse($pyx);
+
+ # Output:
+ # (begin
+ # (middle
+ # (end
+ # -data
+ # )end
+ # )middle
+ # )begin
 
 =head1 DEPENDENCIES
 
