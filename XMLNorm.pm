@@ -181,7 +181,7 @@ __END__
 
 =head1 NAME
 
-PYX::XMLNorm - TODO
+PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 
 =head1 SYNOPSIS
 

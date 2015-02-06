@@ -1,5 +1,5 @@
 ---
-abstract: TODO
+abstract: 'Processing PYX data or file and do XML normalization.'
 author:
   - 'Michal Spacek <skim@cpan.org>'
 build_requires:

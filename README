@@ -1,5 +1,5 @@
 NAME
-    PYX::XMLNorm - TODO
+    PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 
 SYNOPSIS
      use PYX::XMLNorm;
