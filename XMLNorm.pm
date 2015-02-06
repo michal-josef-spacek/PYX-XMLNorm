@@ -11,7 +11,7 @@ use PYX qw(end_element);
 use PYX::Parser;
 
 # Version.
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 # Global variables.
 use vars qw($stack $rules $flush_stack);
@@ -322,6 +322,6 @@ Michal Špaček L<skim@cpan.org>.
 
 =head1 VERSION
 
-0.01
+0.02
 
 =cut
