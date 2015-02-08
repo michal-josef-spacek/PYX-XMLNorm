@@ -14,7 +14,7 @@ readme_from 'XMLNorm.pm';
 requires 'Class::Utils' => 0.05;
 requires 'Error::Pure' => 0.15;
 requires 'PYX' => 0.01;
-requires 'PYX::Parser' => 0.01;
+requires 'PYX::Parser' => 0.03;
 requires 'perl' => '5.6.2';
 resources 'bugtracker' => 'https://rt.cpan.org/Public/Dist/Display.html'.
 	'?Name=PYX-XMLNorm';
