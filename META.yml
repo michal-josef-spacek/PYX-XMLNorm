@@ -24,6 +24,7 @@ meta-spec:
 name: PYX-XMLNorm
 no_index:
   directory:
+    - examples
     - inc
     - t
 requires:
