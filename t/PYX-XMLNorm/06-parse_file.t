@@ -8,9 +8,6 @@ use PYX::XMLNorm;
 use Test::More 'tests' => 8;
 use Test::Output;
 
-SKIP: {
-	skip 'Some problem.', 8;
-
 # Directories.
 my $data_dir = File::Object->new->up->dir('data');
 
@@ -127,6 +124,9 @@ stdout_is(
 	'Multiple opened elements (upper and lower case names).',
 );
 
+SKIP: {
+	skip 'Some problem.', 1;
+
 # Test.
 $right_ret = <<'END';
 (td
@@ -150,6 +150,7 @@ stdout_is(
 	$right_ret,
 	'td with table problem.',
 );
+};
 
 # Test.
 $right_ret = <<'END';
@@ -201,4 +202,3 @@ stdout_is(
 	$right_ret,
 	'Simple table with opened tr and td.',
 );
-};
