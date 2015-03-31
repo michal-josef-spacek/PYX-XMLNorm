@@ -50,6 +50,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Multiple opened elements.',
 );
 
 # Test.
@@ -79,6 +80,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Table td opened elements.',
 );
 
 # Test.
@@ -88,6 +90,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Table td opened elements.',
 );
 
 # Test.
@@ -121,6 +124,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Multiple opened elements (upper and lower case names).',
 );
 
 # Test.
@@ -144,6 +148,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'td with table problem.',
 );
 
 # Test.
@@ -158,6 +163,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Simple opened br with data after it.',
 );
 
 # Test.
@@ -174,6 +180,7 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Multiple opened br with data after its.',
 );
 
 # Test.
@@ -192,5 +199,6 @@ stdout_is(
 		return;
 	},
 	$right_ret,
+	'Simple table with opened tr and td.',
 );
 };
