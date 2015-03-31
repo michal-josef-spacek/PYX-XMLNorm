@@ -107,11 +107,7 @@ sub _end_element_simple {
 	my $pyx_parser = shift;
 	my $rules = $pyx_parser->{'non_parser_options'}->{'rules'};
 	my $stack = $pyx_parser->{'non_parser_options'}->{'stack'};
-
-	# Output handler.
 	my $out = $pyx_parser->{'output_handler'};
-
-	# Process.
 	if (exists $rules->{'*'}) {
 		foreach my $tmp (@{$rules->{'*'}}) {
 			if (lc $stack->[-1] eq $tmp) {
@@ -119,10 +115,7 @@ sub _end_element_simple {
 			}
 		}
 	}
-
-	# Print line.
 	print {$out} $pyx_parser->line, "\n";
-
 	return;
 }
 
