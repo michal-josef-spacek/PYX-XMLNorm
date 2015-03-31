@@ -96,7 +96,6 @@ DEPENDENCIES
     Class::Utils, Error::Pure, PYX, PYX::Parser.
 
 SEE ALSO
-    PYX, PYX::GraphViz, PYX::Hist, PYX::Parser, PYX::Stack, PYX::Utils,
     Task::PYX.
 
 REPOSITORY
