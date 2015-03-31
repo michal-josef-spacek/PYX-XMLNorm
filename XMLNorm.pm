@@ -110,7 +110,7 @@ sub _end_element_simple {
 	my $out = $pyx_parser->{'output_handler'};
 	if (exists $rules->{'*'}) {
 		foreach my $tmp (@{$rules->{'*'}}) {
-			if (lc $stack->[-1] eq $tmp) {
+			if (@{$stack} && lc $stack->[-1] eq $tmp) {
 				print {$out} end_element(pop @{$stack}), "\n";
 			}
 		}

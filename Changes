@@ -1,4 +1,5 @@
 0.03
+ - Fix warning with no element on stack.
  - Remove comments.
  - Remove global variables.
  - Rewrite SEE ALSO section to proper Task.
