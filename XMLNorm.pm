@@ -13,9 +13,6 @@ use PYX::Parser;
 # Version.
 our $VERSION = 0.03;
 
-# Global variables.
-use vars qw($stack $rules $flush_stack);
-
 # Constructor.
 sub new {
 	my ($class, @params) = @_;
@@ -46,18 +43,14 @@ sub new {
 			'final' => \&_final,
 			'start_element' => \&_start_element,
 		},
+		'non_parser_options' => {
+			'flush_stack' => $self->{'flush_stack'},
+			'rules' => $self->{'rules'},
+			'stack' => [],
+		},
 		'output_handler' => $self->{'output_handler'},
 		'output_rewrite' => 1,
 	);
-
-	# Tag values.
-	$stack = [];
-
-	# Rules.
-	$rules = $self->{'rules'};
-
-	# Flush stack.
-	$flush_stack = $self->{'flush_stack'};
 
 	# Object.
 	return $self;
@@ -88,6 +81,8 @@ sub parse_handler {
 sub _start_element {
 	my ($pyx_parser, $tag) = @_;
 	my $out = $pyx_parser->{'output_handler'};
+	my $rules = $pyx_parser->{'non_parser_options'}->{'rules'};
+	my $stack = $pyx_parser->{'non_parser_options'}->{'stack'};
 	if (exists $rules->{'*'}) {
 		foreach my $tmp (@{$rules->{'*'}}) {
 			if (@{$stack} > 0 && lc($stack->[-1]) eq $tmp) {
@@ -110,6 +105,8 @@ sub _start_element {
 # Add implicit end_element.
 sub _end_element_simple {
 	my $pyx_parser = shift;
+	my $rules = $pyx_parser->{'non_parser_options'}->{'rules'};
+	my $stack = $pyx_parser->{'non_parser_options'}->{'stack'};
 
 	# Output handler.
 	my $out = $pyx_parser->{'output_handler'};
@@ -133,6 +130,8 @@ sub _end_element_simple {
 sub _end_element {
 	my ($pyx_parser, $tag) = @_;
 	my $out = $pyx_parser->{'output_handler'};
+	my $rules = $pyx_parser->{'non_parser_options'}->{'rules'};
+	my $stack = $pyx_parser->{'non_parser_options'}->{'stack'};
 	if (exists $rules->{'*'}) {
 		foreach my $tmp (@{$rules->{'*'}}) {
 			if (lc($tag) ne $tmp && lc($stack->[-1]) eq $tmp) {
@@ -158,11 +157,12 @@ sub _end_element {
 # Process final.
 sub _final {
 	my $pyx_parser = shift;
+	my $stack = $pyx_parser->{'non_parser_options'}->{'stack'};
 	my $out = $pyx_parser->{'output_handler'};
 	if (@{$stack} > 0) {
 
 		# If set, than flush stack.
-		if ($flush_stack) {
+		if ($pyx_parser->{'non_parser_options'}->{'flush_stack'}) {
 			foreach my $tmp (reverse @{$stack}) {
 				print {$out} end_element($tmp), "\n";
 			}

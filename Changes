@@ -1,4 +1,5 @@
 0.03
+ - Remove global variables.
  - Rewrite SEE ALSO section to proper Task.
 
 0.02 2015-02-09T07:49:11+01:00
