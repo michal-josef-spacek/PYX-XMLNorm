@@ -209,11 +209,12 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
  XML normalization rules.
  Parameter is required.
  Format of rules is:
- outer element => list of inner elements.
+ Outer element => list of inner elements.
  e.g.
  {
          'middle' => ['end'],
  },
+ Outer element can be '*'.
  Default value is {}.
 
 =back

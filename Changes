@@ -1,6 +1,7 @@
 0.03
  - Add comments to tests.
  - Fix warning with no element on stack.
+ - Improve doc for '*' as rules key.
  - Remove comments.
  - Remove global variables.
  - Rewrite SEE ALSO section to proper Task.
