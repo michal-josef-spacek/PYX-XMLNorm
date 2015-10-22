@@ -1,6 +1,5 @@
 TODO
 ====
-1. Opravit testy.
 2. Dodelat pokryti testy.
 3. Dodelat dokumentaci v PYX::XMLNorm.
 5. Resit PYX::XMLNorm s flush.
@@ -29,3 +28,7 @@ Applied
 4. Popremyslet, jestli neni lepsi nepouzivat globalni promenne v PYX::XMLNorm.
    Neco jako XML::Parser.
 OK [20150331] skim
+
+1. Opravit testy.
+Duplicitni.
+NONE [20151022] skim
