@@ -1,7 +1,6 @@
 TODO
 ====
 2. Dodelat pokryti testy.
-3. Dodelat dokumentaci v PYX::XMLNorm.
 5. Resit PYX::XMLNorm s flush.
     Mam vstup:
     (xml
@@ -21,7 +20,8 @@ TODO
 6. Nastaveni XML normalizace pro html by mohlo byt v nejake knihovne.
    Automaticke vytvareni podle DTD?
 7. Opravit testy, kde mam SKIP.
-8.
+8. Az bude App::PYX::XMLNorm, tak pridat do SEE ALSO sekce.
+9.
 
 Applied
 =======
@@ -32,3 +32,6 @@ OK [20150331] skim
 1. Opravit testy.
 Duplicitni.
 NONE [20151022] skim
+
+3. Dodelat dokumentaci v PYX::XMLNorm.
+OK [20151022] skim
