@@ -9,7 +9,7 @@ SYNOPSIS
      $obj->parse_handle($input_file_handler, $out);
 
 METHODS
-    "new()"
+    "new(%parameters)"
              Constructor.
 
             *       "flush_stack"

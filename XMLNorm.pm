@@ -188,7 +188,7 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 
 =over 8
 
-=item C<new()>
+=item C<new(%parameters)>
 
  Constructor.
 
