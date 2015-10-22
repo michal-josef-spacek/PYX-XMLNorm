@@ -97,7 +97,10 @@ DEPENDENCIES
     Class::Utils, Error::Pure, PYX, PYX::Parser.
 
 SEE ALSO
-    Task::PYX.
+    PYX A perl module for PYX handling.
+
+    Task::PYX
+        Install the PYX modules.
 
 REPOSITORY
     <https://github.com/tupinek/PYX-XMLNorm>
