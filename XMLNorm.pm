@@ -1,16 +1,13 @@
 package PYX::XMLNorm;
 
-# Pragmas.
 use strict;
 use warnings;
 
-# Modules.
 use Class::Utils qw(set_params);
 use Error::Pure qw(err);
 use PYX qw(end_element);
 use PYX::Parser;
 
-# Version.
 our $VERSION = 0.05;
 
 # Constructor.
@@ -248,11 +245,9 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 
 =head1 EXAMPLE
 
- # Pragmas.
  use strict;
  use warnings;
 
- # Modules.
  use PYX::XMLNorm;
 
  # Example data.
