@@ -176,6 +176,7 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 =head1 SYNOPSIS
 
  use PYX::XMLNorm;
+
  my $obj = PYX::XMLNorm->new(%parameters);
  $obj->parse($pyx, $out);
  $obj->parse_file($input_file, $out);
