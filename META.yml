@@ -33,7 +33,7 @@ requires:
   PYX::Parser: 0.03
   perl: 5.6.2
 resources:
-  bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=PYX-XMLNorm
+  bugtracker: https://github.com/tupinek/PYX-XMLNorm/issues
   homepage: https://github.com/tupinek/PYX-XMLNorm
   license: http://opensource.org/licenses/bsd-license.php
   repository: git://github.com/tupinek/PYX-XMLNorm
