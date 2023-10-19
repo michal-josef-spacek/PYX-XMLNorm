@@ -246,6 +246,8 @@ PYX::XMLNorm - Processing PYX data or file and do XML normalization.
 
 =head1 EXAMPLE
 
+=for comment filename=normalize_xml.pl
+
  use strict;
  use warnings;
 
