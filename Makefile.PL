@@ -6,7 +6,7 @@ use inc::Module::Install;
 
 # Definition.
 abstract 'Processing PYX data or file and do XML normalization.';
-author 'Michal Spacek <skim@cpan.org>';
+author 'Michal Josef Spacek <skim@cpan.org>';
 author_requires 'English' => 0;
 author_requires 'File::Object' => 0.07;
 author_requires 'Test::More' => 0;
