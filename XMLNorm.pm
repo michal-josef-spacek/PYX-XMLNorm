@@ -302,7 +302,7 @@ Install the PYX modules.
 
 =head1 REPOSITORY
 
-L<https://github.com/tupinek/PYX-XMLNorm>
+L<https://github.com/michal-josef-spacek/PYX-XMLNorm>
 
 =head1 AUTHOR
 
